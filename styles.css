@@ -1,0 +1,159 @@
+#app {
+  font-family: "Noto Sans KR", sans-serif;
+  max-width: 90%; /* 모바일에서 폭을 화면의 90%로 제한 */
+  margin: 20px auto; /* 상단 여백 축소 */
+  text-align: center;
+  color: #333;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 5vw, 2rem); /* 최소 1.5rem, 최대 2rem으로 반응형 */
+  color: #2c3e50;
+  margin-bottom: 20px; /* 모바일에서 간격 축소 */
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column; /* 기본적으로 세로로 쌓이게 설정 */
+  align-items: center;
+  gap: 15px; /* 모바일에서 간격 축소 */
+  margin-bottom: 20px;
+}
+
+.select-group {
+  display: flex;
+  flex-wrap: wrap; /* 작은 화면에서 자동 줄바꿈 */
+  gap: 8px; /* 모바일에서 간격 축소 */
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* 모바일에서 전체 폭 사용 */
+}
+
+label {
+  font-size: clamp(0.9rem, 3vw, 1.1rem); /* 반응형 폰트 크기 */
+  color: #2c3e50;
+}
+
+select {
+  padding: 8px;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  width: 100px; /* 기본 크기 축소 */
+  max-width: 100%; /* 모바일에서 폭을 유연하게 */
+  transition: border-color 0.3s;
+}
+
+select:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap; /* 버튼도 줄바꿈 허용 */
+  gap: 10px;
+  justify-content: center;
+}
+
+.confirm-btn {
+  padding: 8px 16px; /* 모바일에서 크기 축소 */
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  min-width: 80px; /* 터치 편의성을 위한 최소 폭 */
+}
+
+.confirm-btn:hover {
+  background-color: #2980b9;
+}
+
+.reset-btn {
+  padding: 8px 16px;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  min-width: 80px;
+}
+
+.reset-btn:hover {
+  background-color: #c0392b;
+}
+
+.result-container {
+  background-color: #f9f9f9;
+  padding: 15px; /* 모바일에서 패딩 축소 */
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 90%; /* 모바일에서 폭 조정 */
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.result-box {
+  text-align: left;
+  max-width: 100%; /* 모바일에서 제한 해제 */
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.result-box p {
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
+  margin: 8px 0;
+}
+
+.result-box strong {
+  color: #3498db;
+}
+
+/* 데스크톱용 미디어 쿼리 */
+@media (min-width: 768px) {
+  #app {
+    max-width: 800px; /* 데스크톱에서 최대 폭 복원 */
+    margin: 60px auto;
+  }
+
+  .input-container {
+    flex-direction: row; /* 데스크톱에서 가로 정렬 복원 */
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .select-group {
+    flex-wrap: nowrap; /* 데스크톱에서 줄바꿈 방지 */
+    width: auto;
+  }
+
+  select {
+    width: 120px; /* 데스크톱에서 원래 크기 복원 */
+  }
+
+  .confirm-btn,
+  .reset-btn {
+    padding: 10px 20px; /* 데스크톱에서 원래 크기 복원 */
+  }
+
+  .result-container {
+    padding: 20px; /* 데스크톱에서 원래 패딩 복원 */
+    width: auto;
+  }
+
+  .result-box {
+    max-width: 300px; /* 데스크톱에서 최대 폭 복원 */
+  }
+}
